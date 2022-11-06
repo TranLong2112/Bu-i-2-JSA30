@@ -1,0 +1,22 @@
+*{
+    background-color:aqua;
+}
+
+input {
+    color: blue;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 0;
+    margin: 35px;
+    border: 0;
+    background-color: aquamarine;
+    border-radius: 5px;
+    box-shadow: 0 10px 40px aquamarine, 0 0 0 20px azure;
+    outline: none;    
+}
+
+input[type="text"] {
+    width: 50%;
+    height: 50px;
+    font-size: 28px;
+    line-height: 1;
+}
