@@ -21,6 +21,9 @@
         let name_ha = get_users.indexOf('Hà');
         get_users.splice(name_ha,1)
         localStorage.setItem('users', JSON.stringify(get_users))
+
+        localStorage.removeItem('users')
+        
     </script>
 </body>
 </html>
