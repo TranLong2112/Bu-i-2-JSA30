@@ -1,0 +1,79 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="ShoppingList">
+        <fieldset>
+            <legend>Shopping cart</legend>
+            <labe> Item: <input type="text" name="name"></label>
+                <label>Quantity: <input type="text"name="data"></label>
+    
+                <input type="button" value="Save" onclick="SaveItem( )">
+                <input type="button" value="Update" onclick="ModifyItem( )">
+                <input type="button" value="Delete" onclick="RemoveItem( )">
+            </fieldset>
+            <div id="item_table">
+                <h2>Shopping List</h2>
+                <table id="list"></table>
+                <label><input type="button" value="Clear" onclick="ClearAll( )"></label>
+            </div>
+            <label>Item: <input type="text" name="name" id="name"></label>
+            <label>Quantity: <input type="text" name="data" id="data"></label>
+            <input type="button" value="Clear" onclick="ClearAll()">
+        </fieldset>
+    </form>
+
+    <script>
+        function getCookie( cname) {
+            var name = cname + '=';
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for(var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.index0f(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return ' ';
+        }
+
+        function getCookie() {
+            var username = getCookie('username');
+            if (username != ' ') {
+                alert('Welcome again' + username);
+            } else {
+                username = prompt('Please enter your name: ',  ' ');
+                if (username != ' ' && username != null) {
+                    setCookie('username', username, 365);
+                }
+            }
+        }
+
+        function CheckBrowser() {
+            if ('localStorage' in window && window['localStorage'] !== null) {
+                return true;
+            } else {
+                    return false;
+            }
+        }
+
+        localStorage.setItem('propertyName', 'value');
+        localStorage.getItem('propertyName');
+        localStorage.removeItem('propertyName');
+
+        function SaveItem() {
+            var name = document.forms.ShoppingList.name.value;
+            var data = document.forms.ShoppingList.data.value;
+            localStorage.setItem(name,data);
+            doShowAll();
+        }
+    </script>
+</body>
+</html>
